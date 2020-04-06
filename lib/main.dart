@@ -45,7 +45,7 @@ class FirstScreen extends StatelessWidget {
             child: ListView(
               children: <Widget>[
                 Image.asset(
-                  'assets/38911_Honai Tech_logo_J_01.png',
+                  'assets/38911_HonaiTech_logo_J_01.png',
                 ),
                 Container(
                     alignment: Alignment.center,
@@ -253,7 +253,7 @@ class ThirdScreen extends StatelessWidget {
                           fontSize: 30),
                     )),
                 Image.asset(
-                  'assets/38911_Honai Tech_logo_J_01.png',
+                  'assets/38911_HonaiTech_logo_J_01.png',
                 ),
                 Container(
                     alignment: Alignment.center,
