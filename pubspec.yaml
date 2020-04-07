@@ -46,7 +46,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
 
   assets:
-    - assets/38911_Honai Tech_logo_J_01.png
+    - assets/38911_HonaiTech_logo_J_01.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
