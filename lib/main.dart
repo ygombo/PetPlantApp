@@ -39,6 +39,7 @@ class FirstScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text('Pet Plant'),
+          centerTitle: true,
         ),
         body: Padding(
             padding: EdgeInsets.all(10),
@@ -143,6 +144,7 @@ class SecondScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text('Pet Plant'),
+          centerTitle: true,
         ),
         body: Padding(
             padding: EdgeInsets.all(10),
@@ -237,6 +239,7 @@ class ThirdScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text('Pet Plant'),
+          centerTitle: true,
         ),
         body: Padding(
             padding: EdgeInsets.all(10),
