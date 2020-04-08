@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ThirdScreen extends StatelessWidget {
-  TextEditingController nameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {

@@ -1,12 +1,12 @@
 
 import 'package:flutter/material.dart';
-import 'second_screen.dart';
-import 'third_screen.dart';
+import 'package:petplant/home.dart';
+import 'package:petplant/signup.dart';
 
 
-class FirstScreen extends StatelessWidget {
-  TextEditingController nameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+class Login extends StatelessWidget {
+  final nameController = TextEditingController();
+  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +88,7 @@ class FirstScreen extends StatelessWidget {
                         print(passwordController.text);
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => ThirdScreen()),
+                          MaterialPageRoute(builder: (context) => Home()),
                         );
                       },
                     )),
@@ -107,7 +107,7 @@ class FirstScreen extends StatelessWidget {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => SecondScreen()),
+                              MaterialPageRoute(builder: (context) => Signup()),
                             );
                           },
                         )
