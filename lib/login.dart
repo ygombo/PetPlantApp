@@ -1,7 +1,10 @@
-import 'package:flutter/material.dart';
-import 'first_screen.dart';
 
-class SecondScreen extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:petplant/home.dart';
+import 'package:petplant/signup.dart';
+
+
+class Login extends StatelessWidget {
   final nameController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -16,23 +19,26 @@ class SecondScreen extends StatelessWidget {
             padding: EdgeInsets.all(10),
             child: ListView(
               children: <Widget>[
+                Image.asset(
+                  'assets/38911_HonaiTech_logo_J_01.png',
+                ),
                 Container(
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      'Register',
+                      'Welcome!',
                       style: TextStyle(
                           color: Colors.blue,
                           fontWeight: FontWeight.w500,
                           fontSize: 30),
                     )),
-//                Container(
-//                    alignment: Alignment.center,
-//                    padding: EdgeInsets.all(10),
-//                    child: Text(
-//                      'Sign in',
-//                      style: TextStyle(fontSize: 20),
-//                    )),
+                Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      'Log in',
+                      style: TextStyle(fontSize: 20),
+                    )),
                 Container(
                   padding: EdgeInsets.all(10),
                   child: TextField(
@@ -40,16 +46,6 @@ class SecondScreen extends StatelessWidget {
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'User Name',
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: TextField(
-                    controller: nameController,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Email',
                     ),
                   ),
                 ),
@@ -64,15 +60,12 @@ class SecondScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: TextField(
-                    controller: nameController,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Location',
-                    ),
-                  ),
+                FlatButton(
+                  onPressed: (){
+                    //forgot password screen
+                  },
+                  textColor: Colors.blue,
+                  child: Text('Forgot Password'),
                 ),
                 Container(
                     height: 50,
@@ -80,16 +73,36 @@ class SecondScreen extends StatelessWidget {
                     child: RaisedButton(
                       textColor: Colors.white,
                       color: Colors.blue,
-                      child: Text('Register'),
+                      child: Text('Login'),
                       onPressed: () {
                         print(nameController.text);
                         print(passwordController.text);
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => FirstScreen()),
+                          MaterialPageRoute(builder: (context) => Home()),
                         );
                       },
                     )),
+                Container(
+                    child: Row(
+                      children: <Widget>[
+                        Text('Does not have account?'),
+                        FlatButton(
+                          textColor: Colors.blue,
+                          child: Text(
+                            'Register an account',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Signup()),
+                            );
+                          },
+                        )
+                      ],
+                      mainAxisAlignment: MainAxisAlignment.center,
+                    ))
               ],
             )));
   }

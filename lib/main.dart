@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'first_screen.dart';
+import 'package:petplant/login.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: FirstScreen(),
+    home: Login(),
   ));
 }
 
@@ -33,8 +33,8 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext ctxt) {
-    return new MaterialApp(
-      home: new FirstScreen(),
+    return MaterialApp(
+      home: Login(),
     );
   }
 }
