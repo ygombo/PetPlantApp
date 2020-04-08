@@ -14,13 +14,16 @@ class FirstScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text('Pet Plant'),
           centerTitle: true,
+          backgroundColor: Colors.green,
         ),
         body: Padding(
             padding: EdgeInsets.all(10),
             child: ListView(
               children: <Widget>[
                 Image.asset(
-                  'assets/38911_HonaiTech_logo_J_01.png',
+                  'assets/HT_logo.png',
+                  height: 200,
+                  width: 200,
                 ),
                 Container(
                     alignment: Alignment.center,
@@ -28,24 +31,23 @@ class FirstScreen extends StatelessWidget {
                     child: Text(
                       'Welcome!',
                       style: TextStyle(
-                          color: Colors.blue,
+                          color: Colors.green,
                           fontWeight: FontWeight.w500,
                           fontSize: 30),
-                    )),
-                Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.all(10),
-                    child: Text(
-                      'Log in',
-                      style: TextStyle(fontSize: 20),
                     )),
                 Container(
                   padding: EdgeInsets.all(10),
                   child: TextField(
                     controller: nameController,
+                    style: TextStyle(color:Colors.black),
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.black,
+                        )
+                      ),
                       labelText: 'User Name',
+                      labelStyle: TextStyle(color:Colors.grey)
                     ),
                   ),
                 ),
@@ -54,9 +56,16 @@ class FirstScreen extends StatelessWidget {
                   child: TextField(
                     obscureText: true,
                     controller: passwordController,
+                      style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.black,
+                        ),
+                      ),
                       labelText: 'Password',
+                      labelStyle: TextStyle(color: Colors.grey)
+
                     ),
                   ),
                 ),
@@ -64,7 +73,7 @@ class FirstScreen extends StatelessWidget {
                   onPressed: (){
                     //forgot password screen
                   },
-                  textColor: Colors.blue,
+                  textColor: Colors.green,
                   child: Text('Forgot Password'),
                 ),
                 Container(
@@ -72,7 +81,7 @@ class FirstScreen extends StatelessWidget {
                     padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                     child: RaisedButton(
                       textColor: Colors.white,
-                      color: Colors.blue,
+                      color: Colors.green,
                       child: Text('Login'),
                       onPressed: () {
                         print(nameController.text);
@@ -86,12 +95,14 @@ class FirstScreen extends StatelessWidget {
                 Container(
                     child: Row(
                       children: <Widget>[
-                        Text('Does not have account?'),
+                        Text('Does not have account?',
+//                        style: TextStyle(color:Colors.white),
+                        ),
                         FlatButton(
-                          textColor: Colors.blue,
+                          textColor: Colors.green,
                           child: Text(
                             'Register an account',
-                            style: TextStyle(fontSize: 20),
+                            style: TextStyle(fontSize: 15),
                           ),
                           onPressed: () {
                             Navigator.push(

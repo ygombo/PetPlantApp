@@ -10,6 +10,7 @@ class ThirdScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text('Pet Plant'),
           centerTitle: true,
+          backgroundColor: Colors.green,
         ),
         body: Padding(
             padding: EdgeInsets.all(10),
@@ -21,13 +22,16 @@ class ThirdScreen extends StatelessWidget {
                     child: Text(
                       'Welcome user!',
                       style: TextStyle(
-                          color: Colors.blue,
+                          color: Colors.green,
                           fontWeight: FontWeight.w500,
-                          fontSize: 30),
+                          fontSize: 20),
                     )),
-                Image.asset(
-                  'assets/38911_HonaiTech_logo_J_01.png',
-                ),
+                Container(
+                    child:Image.asset(
+                  'assets/plant_ex.png',
+                      height: 200,
+                      width: 200,
+                )),
                 Container(
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(10),
@@ -52,7 +56,7 @@ class ThirdScreen extends StatelessWidget {
                     padding: EdgeInsets.fromLTRB(10, 0, 10, 2.5),
                     child: RaisedButton(
                       textColor: Colors.white,
-                      color: Colors.blue,
+                      color: Colors.green,
                       child: Text('Switch plant'),
                       onPressed: () {
                       },
@@ -62,7 +66,7 @@ class ThirdScreen extends StatelessWidget {
                     padding: EdgeInsets.fromLTRB(10, 2.5, 10, 0),
                     child: RaisedButton(
                       textColor: Colors.white,
-                      color: Colors.blue,
+                      color: Colors.green,
                       child: Text('Add another plant'),
                       onPressed: () {
                       },

@@ -11,6 +11,7 @@ class SecondScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text('Pet Plant'),
           centerTitle: true,
+          backgroundColor: Colors.green,
         ),
         body: Padding(
             padding: EdgeInsets.all(10),
@@ -22,7 +23,7 @@ class SecondScreen extends StatelessWidget {
                     child: Text(
                       'Register',
                       style: TextStyle(
-                          color: Colors.blue,
+                          color: Colors.green,
                           fontWeight: FontWeight.w500,
                           fontSize: 30),
                     )),
@@ -79,7 +80,7 @@ class SecondScreen extends StatelessWidget {
                     padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                     child: RaisedButton(
                       textColor: Colors.white,
-                      color: Colors.blue,
+                      color: Colors.green,
                       child: Text('Register'),
                       onPressed: () {
                         print(nameController.text);
