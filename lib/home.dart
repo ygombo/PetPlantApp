@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:petplant/login.dart';
 
 class Home extends StatelessWidget {
 
@@ -130,11 +131,58 @@ class Home extends StatelessWidget {
                     child: RaisedButton(
                       textColor: Colors.white,
                       color: Colors.green,
-                      child: Text('Add another plant'),
+                      child: Text('Add a plant'),
                       onPressed: () {
                       },
-                    )),
+                    )
+                ),
               ],
-            )));
+            )
+        ),
+
+        // Create Drawer here for the drop down menu//*******
+        drawer: Drawer(
+          child: ListView(
+            // Important: Remove any padding from the ListView.
+              padding: EdgeInsets.zero,
+              children: <Widget>[
+                DrawerHeader(
+                  child: Text('User Name'),
+                  decoration: BoxDecoration(
+                  color: Colors.green,),
+                ),
+                ListTile(
+                  title: Text('Add a plant'),
+                  onTap: () {
+                    // Update the state of the app
+                    // ...
+                    // Then close the drawer
+                    Navigator.pop(context);
+                  },
+                ),
+                ListTile(
+                  title: Text('Settings'),
+                  onTap: () {
+                    // Update the state of the app
+                    // ...
+                    // Then close the drawer
+                    Navigator.pop(context);
+                  },
+                ),
+                ListTile(
+                  title: Text('Log out'),
+                  onTap: () {
+
+
+                    // ...
+                    // Then close the drawer
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Login()));
+                  },
+                ),
+              ]
+          ),
+        ),
+    );
   }
 }
