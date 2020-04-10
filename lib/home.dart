@@ -147,38 +147,58 @@ class Home extends StatelessWidget {
               padding: EdgeInsets.zero,
               children: <Widget>[
                 DrawerHeader(
-                  child: Text('User Name'),
+                  child: RichText(
+                    text: TextSpan(
+                      style: Theme.of(context).textTheme.bodyText2,
+                      children: [
+                        WidgetSpan(
+                          child: Padding(
+                            padding: EdgeInsets.only(right:10),
+                            child: Icon(Icons.account_circle),
+                          ),
+                        ),
+                        TextSpan(text: 'User name'),
+                      ],
+                    ),
+                  ),
                   decoration: BoxDecoration(
                   color: Colors.green,),
                 ),
-                ListTile(
-                  title: Text('Add a plant'),
-                  onTap: () {
+                Card(
+                  child: ListTile(
+                    title: Text('Add a plant'),
+                    leading: Icon(Icons.add_circle),
+                    onTap: () {
                     // Update the state of the app
                     // ...
                     // Then close the drawer
                     Navigator.pop(context);
-                  },
+                    },
+                  ),
                 ),
-                ListTile(
-                  title: Text('Settings'),
-                  onTap: () {
+                Card(
+                  child: ListTile(
+                    title: Text('Settings'),
+                    leading: Icon(Icons.settings),
+                    onTap: () {
                     // Update the state of the app
                     // ...
                     // Then close the drawer
                     Navigator.pop(context);
-                  },
+                    },
+                  ),
                 ),
-                ListTile(
-                  title: Text('Log out'),
-                  onTap: () {
+                Card(
+                  child: ListTile(
+                    title: Text('Log out'),
+                    leading: Icon(Icons.exit_to_app),
+                    onTap: () {
 
-
-                    // ...
                     // Then close the drawer
                     Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Login()));
-                  },
+                    },
+                  ),
                 ),
               ]
           ),
