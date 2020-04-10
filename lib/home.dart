@@ -149,7 +149,7 @@ class Home extends StatelessWidget {
                 DrawerHeader(
                   child: RichText(
                     text: TextSpan(
-                      style: Theme.of(context).textTheme.bodyText2,
+                      style: Theme.of(context).textTheme.body2,
                       children: [
                         WidgetSpan(
                           child: Padding(
