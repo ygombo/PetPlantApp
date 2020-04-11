@@ -1,8 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:petplant/home.dart';
 import 'package:petplant/signup.dart';
+import 'package:progress_dialog/progress_dialog.dart';
+//import 'package:provider/provider.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
+  @override
+  _LoginState createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  ProgressDialog dialog;
+
+  @override
+  void initState() {
+    super.initState();
+    dialog = new ProgressDialog(context,
+        type: ProgressDialogType.Normal, isDismissible: false, showLogs: true);
+    dialog.style(
+        message: "Logging in...",
+        progressWidget: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: CircularProgressIndicator(),
+        ),
+        elevation: 10);
+  }
+
   final nameController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -78,7 +101,8 @@ class Login extends StatelessWidget {
                     textColor: Colors.white,
                     color: Colors.green,
                     child: Text('Login'),
-                    onPressed: () {
+                    onPressed: () async{
+                      await dialog.show();
                       print(nameController.text);
                       print(passwordController.text);
                       Navigator.push(
