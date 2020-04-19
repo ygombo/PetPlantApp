@@ -1,7 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:petplant/login.dart';
-
+import 'package:petplant/about.dart';
+import 'package:petplant/settings.dart';
+import 'package:petplant/addplant.dart';
 
 class Drawers extends StatelessWidget {
 
@@ -45,7 +47,8 @@ class Drawers extends StatelessWidget {
                     // Update the state of the app
                     // ...
                     // Then close the drawer
-                    Navigator.pop(context);
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Addplant()));
                     },
                   ),
                 ),
@@ -55,9 +58,20 @@ class Drawers extends StatelessWidget {
                     leading: Icon(Icons.settings),
                     onTap: () {
                     // Update the state of the app
-                    // ...
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Settings()));
+                    },
+                  ),
+                ),
+                Card(
+                  child: ListTile(
+                    title: Text('About'),
+                    leading: Icon(Icons.help),
+                    onTap: () {
+
                     // Then close the drawer
-                    Navigator.pop(context);
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => About()));
                     },
                   ),
                 ),
@@ -67,9 +81,9 @@ class Drawers extends StatelessWidget {
                     leading: Icon(Icons.exit_to_app),
                     onTap: () {
 
-                    // Then close the drawer
-                    Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Login()));
+                      // Then close the drawer
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Login()));
                     },
                   ),
                 ),
